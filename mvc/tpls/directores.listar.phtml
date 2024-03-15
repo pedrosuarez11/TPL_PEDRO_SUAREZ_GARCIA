@@ -1,0 +1,20 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<?php if ($loggeado) { ?>
+    <a href="directores/agregar"> <button>Agregar director</button> </a>
+<?php } ?>
+<ul>
+    <?php foreach ($directores as $director) { ?>
+        <li>
+            <?php if ($loggeado) { ?>
+                <a href="directores/eliminar/<?= $director->id ?>"> <button>Eliminar</button> </a>
+                <a href="directores/putForm/<?= $director->id ?>"> <button>Modificar</button> </a>
+            <?php } ?>
+            <b>Nombre</b> : <a href="directores/<?= $director->id ?>">
+                <?= $director->nombre ?>
+            </a>
+        </li>
+    <?php } ?>
+</ul>
+
+<?php require "./tpls/foot.phtml"; ?>

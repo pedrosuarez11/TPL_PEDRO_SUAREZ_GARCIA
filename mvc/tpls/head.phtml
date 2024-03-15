@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href=<?= BASE_URL ?> />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <title>TPLibre</title>
+</head>
+
+<body>
+    <ul>
+        <li> <a href="home">Home</a> </li>
+        <?php if (!$loggeado) { ?> <li> <a href="login">Login</a></li> <?php } ?>
+        <?php if (!$loggeado) { ?> <li> <a href="registro">Registrarme</a></li> <?php } ?>
+        <?php if ($loggeado) { ?> <li> <a href="logout">Logout</a></li> <?php } ?>
+        <li> <a href="peliculas">Peliculas </a>
+            <?php if ($loggeado) { ?>
+                <a href="peliculas/agregar"> <button>Agregar pelicula</button> </a>
+            <?php } ?>
+        </li>
+        <li> <a href="directores">Directores</a>
+            <?php if ($loggeado) { ?>
+                <a href="directores/agregar"> <button>Agregar director</button> </a>
+            <?php } ?>
+        </li>
+    </ul>

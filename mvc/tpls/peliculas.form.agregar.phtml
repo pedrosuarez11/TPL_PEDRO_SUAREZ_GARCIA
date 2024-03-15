@@ -1,0 +1,26 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<span class="error-msg"><?= $error ?></span>
+
+<form action="peliculas" method="POST" enctype="multipart/form-data">
+    <label for="">Nombre</label>
+    <input name="nombre" type="text">
+    <label for="">Director</label>
+    <select name="director" id="">
+        <?php foreach ($directores as $director) { ?>
+            <option value="<?= $director->id ?>"> <?= $director->nombre ?> </option>
+        <?php } ?>
+    </select>
+
+    <label for="">Duracion</label>
+    <input name="duracion" type="number">
+    <label for="">Fecha de estreno</label>
+    <input name="fecha_estreno" type="date">
+    <label for="">Presupuesto</label>
+    <input name="presupuesto" type="number">
+    <label for="">Poster</label>
+    <input type="file" name="imagen" id="imagen">
+    <input type="submit" value="Agregar">
+</form>
+
+<?php require "./tpls/foot.phtml"; ?>

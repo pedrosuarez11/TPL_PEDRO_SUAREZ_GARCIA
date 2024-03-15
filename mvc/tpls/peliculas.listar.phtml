@@ -1,0 +1,35 @@
+<?php require "./tpls/head.phtml"; ?>
+
+
+
+
+<br>
+<br>
+
+<i>Filtro por director</i>
+
+<br>
+|| <a href="peliculas"> Todos </a> ||
+<?php foreach ($directores as $director) { ?>
+    <a href="peliculas?director=<?= $director->id ?>"> <?= $director->nombre ?> </a> ||
+<?php } ?>
+<br>
+
+<ul>
+    <?php foreach ($peliculas as $pelicula) { ?>
+        <li>
+            <div class="pelicula_tarjeta">
+                <span>
+                    <a href="peliculas/<?= $pelicula->id ?>"> <?= $pelicula->nombre ?> </a> || <?= $pelicula->director ?>
+                </span>
+                <img src=<?= $pelicula->img ?> alt="">
+                <?php if ($loggeado) { ?>
+                    <a href="peliculas/eliminar/<?= $pelicula->id ?>"> <button>Eliminar</button> </a>
+                    <a href="peliculas/putForm/<?= $pelicula->id ?>"> <button>Modificar</button> </a>
+                <?php } ?>
+            </div>
+        </li>
+    <?php } ?>
+</ul>
+
+<?php require "./tpls/foot.phtml"; ?>

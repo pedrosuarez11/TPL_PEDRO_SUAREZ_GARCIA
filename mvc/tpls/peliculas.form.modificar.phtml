@@ -1,0 +1,21 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<span class="error-msg"><?= $error ?></span>
+
+<form action="peliculas/modificar/<?= $pelicula->id ?>" method="POST" enctype="multipart/form-data">
+    <input name="nombre" value="<?= $pelicula->nombre ?>" type="text" placeholder="Nombre">
+    <select name="director" id="">
+        <?php foreach ($directores as $director) { ?>
+            <option value="<?= $director->id ?>" <?php if ($director->id == $pelicula->director) { ?> selected <?php } ?>>
+                <?= $director->nombre ?></option>
+        <?php } ?>
+    </select>
+    <input name="duracion" value="<?= $pelicula->duracion ?>" type="number" placeholder="Duracion">
+    <input name="fecha_estreno" value="<?= $pelicula->fecha_estreno ?>" type="date" placeholder="Fecha de estreno">
+    <input name="presupuesto" value="<?= $pelicula->presupuesto ?>" type="number" placeholder="Presupuesto">
+    <label for="">Poster</label>
+    <img src="<?= $pelicula->img ?>" alt="">
+    <input type="file" name="imagen" id="imagen">
+    <input type="submit" value="Modificar">
+</form>
+<?php require "./tpls/foot.phtml"; ?>

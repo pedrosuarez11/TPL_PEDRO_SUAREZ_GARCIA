@@ -1,0 +1,20 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<?php if ($loggeado) { ?>
+    <a href="peliculas/agregar"> <button>Agregar pelicula</button> </a>
+<?php } ?>
+<ul>
+    <?php if ($loggeado) { ?>
+        <a href="peliculas/eliminar/<?= $pelicula->id ?>"> <button>Eliminar</button> </a>
+        <a href="peliculas/putForm/<?= $pelicula->id ?>"> <button>Modificar</button> </a>
+    <?php } ?>
+    <li> <img src="<?= $pelicula->img ?>" alt=""> </li>
+    <li> <b>Nombre</b> : <?= $pelicula->nombre ?> </li>
+    <li> <b>Director</b> : <?= $pelicula->director ?> </li>
+    <li> <b>Duracion</b> : <?= $pelicula->duracion ?> </li>
+    <li> <b>Fecha de estreno</b> : <?= $pelicula->fecha_estreno ?> </li>
+    <li> <b>Presupuesto</b> : <?= $pelicula->presupuesto ?> </li>
+
+</ul>
+
+<?php require "./tpls/foot.phtml"; ?>

@@ -1,0 +1,13 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<span class="error-msg"><?= $error ?></span>
+
+<form action="directores" method="POST">
+    <label for="">Nombre</label>
+    <input name="nombre" type="text">
+    <label for="">Edad</label>
+    <input name="edad" type="number">
+    <input type="submit" value="Agregar">
+</form>
+
+<?php require "./tpls/foot.phtml"; ?>

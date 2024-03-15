@@ -1,0 +1,13 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<span class="error-msg"><?= $error ?></span>
+
+<form action="directores/modificar/<?= $director->id ?>" method="POST">
+    <label for="">Nombre</label>
+    <input name="nombre" value="<?= $director->nombre ?>" type="text">
+    <label for="">Edad</label>
+    <input name="edad" value="<?= $director->edad ?>" type="number">
+    <input type="submit" value="Modificar">
+</form>
+
+<?php require "./tpls/foot.phtml"; ?>

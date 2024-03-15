@@ -1,0 +1,11 @@
+<?php require "./tpls/head.phtml"; ?>
+
+<span class="error-msg"><?= $error ?></span>
+
+<form action="registro" method="POST">
+    <input name="username" type="text">
+    <input name="password" type="text">
+    <input type="submit" value="Registrarme">
+</form>
+
+<?php require "./tpls/foot.phtml"; ?>

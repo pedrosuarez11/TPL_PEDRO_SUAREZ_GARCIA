@@ -22,7 +22,7 @@ Se puede especificar ademas si el orden (order) es ASCendente o DESCendente.
 
 Se puede filtrar por cualquier campo (filterBy), pero es preciso tambien recibir el valor (filter):
 
- -- GET : peliculas?director={int}
+ -- GET : peliculas?filterBy={String}&filter={valor}
 
 Listar una pelicula por su ID:
 
@@ -73,6 +73,10 @@ Se puede especificar ademas si el orden (order) es ASCendente o DESCendente.
  -- GET : directores?orderBy={String}&order=ASC
 
  -- GET : directores?orderBy={String}&order=DESC
+
+Se puede filtrar por cualquier campo (filterBy), pero es preciso tambien recibir el valor (filter):
+
+ -- GET : directores?filterBy={String}&filter={valor}
 
 Listar un director por su ID:
 
